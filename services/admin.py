@@ -5,4 +5,5 @@ from services.models import Service
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'price', )
+    search_fields = ('name', )
