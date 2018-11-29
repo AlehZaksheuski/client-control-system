@@ -6,7 +6,7 @@ from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
 class ClientServicesAdminInline(admin.StackedInline):
     model = ClientServices
     verbose_name_plural = 'услуги'
-    fields = ('service', 'number_of_remaining_visits', 'service_debt')
+    fields = ('service', 'number_of_remaining_visits', 'service_debt', 'service_start_date', 'service_end_date')
     extra = 0
 
 
@@ -28,6 +28,8 @@ class ClientServicesAdmin(admin.ModelAdmin):
         'get_client_patronymic',
         'number_of_remaining_visits',
         'service_debt',
+        'service_start_date',
+        'service_end_date',
     )
     list_filter = (
         ('service', RelatedDropdownFilter),

@@ -23,6 +23,8 @@ class ClientServices(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
     number_of_remaining_visits = models.PositiveSmallIntegerField(default=0, verbose_name='Количество оставшихся визитов')
     service_debt = models.PositiveSmallIntegerField(default=0, verbose_name='Долг по услуге')
+    service_start_date = models.DateField(null=True, blank=True, verbose_name='Дата активации услуги')
+    service_end_date = models.DateField(null=True, blank=True, verbose_name='Дата окончания услуги')
 
     class Meta:
         verbose_name = 'услуга клиента'
