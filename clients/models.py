@@ -27,8 +27,7 @@ class ClientServices(models.Model):
     class Meta:
         verbose_name = 'услуга клиента'
         verbose_name_plural = 'услуги клиента'
-
-    unique_together = ("client", "service")
+        unique_together = ("client", "service")
 
     def __str__(self):
         return "{} {} - {}: {}".format(
