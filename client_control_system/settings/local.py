@@ -1,1 +1,1 @@
-from client_control_system.settings import *
+from client_control_system.settings.base import *
