@@ -22,15 +22,19 @@ class ClientAdmin(admin.ModelAdmin):
 @admin.register(ClientServices)
 class ClientServicesAdmin(admin.ModelAdmin):
     list_display = (
+        'get_service_name',
         'get_client_first_name',
         'get_client_last_name',
         'get_client_patronymic',
-        'get_service_name',
         'number_of_remaining_visits',
         'service_debt',
     )
-    list_filter = (('service', RelatedDropdownFilter), ('client', RelatedDropdownFilter), ('service_debt', admin.BooleanFieldListFilter))
-    search_fields = ('client__first_name', 'client__last_name', 'client__patronymic')
+    list_filter = (
+        ('service', RelatedDropdownFilter),
+        ('client', RelatedDropdownFilter),
+        ('service_debt', admin.BooleanFieldListFilter),
+    )
+    search_fields = ('client__first_name', 'client__last_name', 'client__patronymic', 'service__name')
 
     def get_client_first_name(self, obj):
         return obj.client.first_name
