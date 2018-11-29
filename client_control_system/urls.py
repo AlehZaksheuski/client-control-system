@@ -21,3 +21,4 @@ urlpatterns = [
 ]
 
 admin.site.site_header = 'Система контроля клиентов'
+admin.site.index_title = ''
