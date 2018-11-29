@@ -4,8 +4,8 @@ from services.models import Service
 
 
 class Client(models.Model):
-    first_name = models.CharField(max_length=256, verbose_name='Имя')
     last_name = models.CharField(max_length=256, verbose_name='Фамилия')
+    first_name = models.CharField(max_length=256, verbose_name='Имя')
     patronymic = models.CharField(max_length=256, verbose_name='Отчество')
     description = models.TextField(verbose_name='Описание')
     birthday = models.DateField(verbose_name='Дата рождения')
@@ -15,7 +15,7 @@ class Client(models.Model):
         verbose_name_plural = 'клиенты'
 
     def __str__(self):
-        return "{} {} {}".format(self.first_name, self.last_name, self.patronymic)
+        return "{} {} {}".format(self.last_name, self.first_name, self.patronymic)
 
 
 class ClientServices(models.Model):
