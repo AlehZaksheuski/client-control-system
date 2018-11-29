@@ -1,12 +1,12 @@
 from django.contrib import admin
 from clients.models import Client, ClientServices
-from django_admin_listfilter_dropdown.filters import DropdownFilter, RelatedDropdownFilter
+from django_admin_listfilter_dropdown.filters import RelatedDropdownFilter
 
 
 class ClientServicesAdminInline(admin.StackedInline):
     model = ClientServices
-    verbose_name_plural = 'клиент'
-    fields = ('number_of_remaining_visits', 'service')
+    verbose_name_plural = 'услуги'
+    fields = ('service', 'number_of_remaining_visits', 'service_debt')
     extra = 0
 
 
@@ -27,8 +27,9 @@ class ClientServicesAdmin(admin.ModelAdmin):
         'get_client_patronymic',
         'get_service_name',
         'number_of_remaining_visits',
+        'service_debt',
     )
-    list_filter = (('service', RelatedDropdownFilter), ('client', RelatedDropdownFilter))
+    list_filter = (('service', RelatedDropdownFilter), ('client', RelatedDropdownFilter), ('service_debt', admin.BooleanFieldListFilter))
     search_fields = ('client__first_name', 'client__last_name', 'client__patronymic')
 
     def get_client_first_name(self, obj):
