@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -75,10 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'client_control_system.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -90,6 +85,10 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
+# Database
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+
+
 
 
 # Password validation
@@ -134,5 +133,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
