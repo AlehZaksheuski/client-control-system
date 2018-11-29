@@ -28,7 +28,7 @@ class ClientServicesAdmin(admin.ModelAdmin):
         'get_service_name',
         'number_of_remaining_visits',
     )
-    list_filter = (('client', RelatedDropdownFilter), ('service', RelatedDropdownFilter))
+    list_filter = (('service', RelatedDropdownFilter), ('client', RelatedDropdownFilter))
     search_fields = ('client__first_name', 'client__last_name', 'client__patronymic')
 
     def get_client_first_name(self, obj):

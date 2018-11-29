@@ -74,6 +74,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'client_control_system.wsgi.application'
 
+
+# Database
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -85,9 +88,6 @@ DATABASES = {
         'OPTIONS': {'charset': 'utf8mb4'},
     }
 }
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 
 
 
@@ -128,8 +128,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
