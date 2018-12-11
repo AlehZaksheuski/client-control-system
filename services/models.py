@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Service(models.Model):
-    name = models.CharField(max_length=256, verbose_name='Имя услуги')
+    name = models.TextField(verbose_name='Имя услуги')
     price = models.PositiveSmallIntegerField(verbose_name='Цена (BYN)')
 
     class Meta:
