@@ -23,8 +23,8 @@ class ClientAdmin(admin.ModelAdmin):
 class ClientServicesAdmin(admin.ModelAdmin):
     list_display = (
         'get_service_name',
-        'get_client_first_name',
         'get_client_last_name',
+        'get_client_first_name',
         'get_client_patronymic',
         'number_of_remaining_visits',
         'service_debt',
