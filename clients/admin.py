@@ -36,7 +36,7 @@ class ClientServicesAdmin(admin.ModelAdmin):
         ('client', RelatedDropdownFilter),
         ('service_debt', admin.BooleanFieldListFilter),
     )
-    search_fields = ('client__first_name', 'client__last_name', 'client__patronymic', 'service__name')
+    search_fields = ('client__last_name', 'client__first_name', 'client__patronymic', 'service__name')
 
     def get_client_first_name(self, obj):
         return obj.client.first_name
